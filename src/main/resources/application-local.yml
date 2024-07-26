@@ -1,0 +1,32 @@
+server:
+  port: 8081
+spring:
+  cloud:
+    vault:
+      kv:
+        enabled: true
+      scheme: http
+      host: localhost
+      port: 8200
+      authentication: token
+      token: "hvs.VvePxlmNSe8WONYRqALmd6kB"
+  config:
+    import:
+      - "optional:vault://"
+      - "configserver:http://localhost:8080"
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: documents
+      username: admin
+      password: password
+  security:
+    oauth2:
+      client:
+        provider:
+          keycloak:
+            issuer-uri: http://localhost:18080/realms/documents
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:18080/realms/documents

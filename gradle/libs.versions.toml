@@ -1,0 +1,28 @@
+[versions]
+gatling = "3.11.3"
+jacoco = "0.8.12"
+micrometer = "1.13.1"
+openapi = "1.8.0"
+openapi-generator = "7.6.0"
+owasp = "9.2.0"
+opentelemetry = "1.38.0"
+spring-boot = "3.3.0"
+spring-cloud = "2023.0.2"
+spring-dependency-management = "1.1.5"
+spring-doc = "2.5.0"
+testcontainers = "1.19.8"
+testcontainers-keycloak = "3.4.0"
+
+[libraries]
+micrometer-bom = { module = "io.micrometer:micrometer-bom", version.ref = "micrometer" }
+opentelemetry-bom = { module = "io.opentelemetry:opentelemetry-bom", version.ref = "opentelemetry" }
+spring-cloud-bom = { module = "org.springframework.cloud:spring-cloud-dependencies", version.ref = "spring-cloud" }
+testcontainers-bom = { module = "org.testcontainers:testcontainers-bom", version.ref = "testcontainers" }
+
+[plugins]
+gatling = { id = "io.gatling.gradle", version.ref = "gatling" }
+openapi-doc = { id = "org.springdoc.openapi-gradle-plugin", version.ref = "openapi" }
+openapi-generator = { id = "org.openapi.generator", version.ref = "openapi-generator" }
+owasp = { id = "org.owasp.dependencycheck", version.ref = "owasp" }
+spring-boot = { id = "org.springframework.boot", version.ref = "spring-boot" }
+spring-dependency-management = { id = "io.spring.dependency-management", version.ref = "spring-dependency-management" }

@@ -1,59 +1,59 @@
-logging:
-  pattern:
-    level: "%5p [%X{traceId:-},%X{spanId:-}]"
-management:
-  server:
-    port: 9081
-spring:
-  application:
-    name: dms
-  cloud:
-    stream:
-      bindings:
-        file-uploaded-out-0:
-          destination: file.uploaded
-        file-viewed-out-0:
-          destination: file.viewed
-        file-deleted-out-0:
-          destination: file.deleted
-      rabbit:
-        bindings:
-          file-uploaded-out-0:
-            producer:
-              exchange-type: fanout
-          file-viewed-out-0:
-            producer:
-              exchange-type: fanout
-          file-deleted-out-0:
-            producer:
-              exchange-type: fanout
-    vault:
-      database:
-        enabled: true
-        role: dms
-        backend: database
-        username-property: spring.data.mongodb.username
-        password-property: spring.data.mongodb.password
-  security:
-    oauth2:
-      client:
-        provider:
-          keycloak:
-            user-name-attribute: preferred_username
-        registration:
-          keycloak:
-            client-id: dms
-            authorization-grant-type: authorization_code
-            scope: openid
-  servlet:
-    multipart:
-      max-file-size: 5MB
-      max-request-size: 5MB
-  thymeleaf:
-    check-template-location: false
-springdoc:
-  api-docs:
-    enabled: false
-  swagger-ui:
-    enabled: false
+logging :
+  pattern :
+    level : "%5p [%X{traceId:-},%X{spanId:-}]"
+management :
+  server :
+    port : 9081
+spring :
+  application :
+    name : dms
+  cloud :
+    stream :
+      bindings :
+        file-uploaded-out-0 :
+          destination : file.uploaded
+        file-viewed-out-0 :
+          destination : file.viewed
+        file-deleted-out-0 :
+          destination : file.deleted
+      rabbit :
+        bindings :
+          file-uploaded-out-0 :
+            producer :
+              exchange-type : fanout
+          file-viewed-out-0 :
+            producer :
+              exchange-type : fanout
+          file-deleted-out-0 :
+            producer :
+              exchange-type : fanout
+    vault :
+      database :
+        enabled : true
+        role : dms
+        backend : database
+        username-property : spring.data.mongodb.username
+        password-property : spring.data.mongodb.password
+  security :
+    oauth2 :
+      client :
+        provider :
+          keycloak :
+            user-name-attribute : preferred_username
+        registration :
+          keycloak :
+            client-id : dms
+            authorization-grant-type : authorization_code
+            scope : openid
+  servlet :
+    multipart :
+      max-file-size : 5MB
+      max-request-size : 5MB
+  thymeleaf :
+    check-template-location : false
+springdoc :
+  api-docs :
+    enabled : false
+  swagger-ui :
+    enabled : false
 

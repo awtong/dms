@@ -9,9 +9,9 @@ import org.testcontainers.utility.DockerImageName;
 @TestConfiguration(proxyBeanMethods = false)
 public class RabbitContainerConfig {
 
-    @Bean
-    @ServiceConnection
-    RabbitMQContainer rabbitMQContainer() {
-        return new RabbitMQContainer(DockerImageName.parse("rabbitmq:management"));
-    }
+  @Bean
+  @ServiceConnection
+  RabbitMQContainer rabbitMQContainer() {
+    return new RabbitMQContainer(DockerImageName.parse("rabbitmq:management"));
+  }
 }

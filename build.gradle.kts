@@ -30,7 +30,6 @@ dependencies {
         testImplementation("org.apache.james:apache-mime4j-core:0.8.11") {
             because("previous versions have vulnerabilities")
         }
-
     }
 
     implementation(platform(libs.micrometer.bom))
@@ -64,6 +63,11 @@ dependencies {
     testImplementation("org.testcontainers:mongodb")
     testImplementation("org.testcontainers:rabbitmq")
     testImplementation("com.github.dasniko:testcontainers-keycloak:${libs.versions.testcontainers.keycloak.get()}")
+}
+
+dependencyCheck {
+    nvd.apiKey = "3d0bb159-8581-40fa-bd4d-d0eec72d6a38"
+    nvd.delay = 150000
 }
 
 testing {

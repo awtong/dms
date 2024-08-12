@@ -1,11 +1,11 @@
-logging:
-  level:
-    root: WARN
-    awt.dms: DEBUG
-spring:
-  cloud:
-    config:
-      enabled: false
-    vault:
-      enabled: false
+logging :
+  level :
+    root : WARN
+    awt.dms : DEBUG
+spring :
+  cloud :
+    config :
+      enabled : false
+    vault :
+      enabled : false
 

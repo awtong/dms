@@ -1,17 +1,17 @@
-version: '3.8'
-services:
-  mongodb:
-    image: mongo
-    container_name: mongodb
-    restart: always
-    environment:
-      MONGO_INITDB_ROOT_USERNAME: admin
-      MONGO_INITDB_ROOT_PASSWORD: password
-      MONGO_INITDB_DATABASE: documents
-    ports:
+version : '3.8'
+services :
+  mongodb :
+    image : mongo
+    container_name : mongodb
+    restart : always
+    environment :
+      MONGO_INITDB_ROOT_USERNAME : admin
+      MONGO_INITDB_ROOT_PASSWORD : password
+      MONGO_INITDB_DATABASE : documents
+    ports :
       - '27017:27017'
-    volumes:
+    volumes :
       - ./mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
       - mongo-volume:/data/db
-volumes:
-  mongo-volume:
+volumes :
+  mongo-volume :

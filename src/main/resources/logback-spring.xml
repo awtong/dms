@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <configuration>
-    <include resource="org/springframework/boot/logging/logback/base.xml"/>
-    <springProfile name="!production">
-        <logger name="awt" level="DEBUG"/>
-        <root level="INFO">
-            <appender-ref ref="CONSOLE"/>
-        </root>
-    </springProfile>
-    <springProfile name="production">
-        <logger name="awt" level="INFO"/>
-        <root level="ERROR">
-            <appender-ref ref="CONSOLE"/>
-        </root>
-    </springProfile>
+  <include resource="org/springframework/boot/logging/logback/base.xml"/>
+  <springProfile name="!production">
+    <logger name="awt" level="DEBUG"/>
+    <root level="INFO">
+      <appender-ref ref="CONSOLE"/>
+    </root>
+  </springProfile>
+  <springProfile name="production">
+    <logger name="awt" level="INFO"/>
+    <root level="ERROR">
+      <appender-ref ref="CONSOLE"/>
+    </root>
+  </springProfile>
 </configuration>

@@ -1,4 +1,4 @@
-logging:
-  level:
-    root: WARN
-    awt.dms: DEBUG
+logging :
+  level :
+    root : WARN
+    awt.dms : DEBUG

@@ -7,8 +7,8 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 @Configuration
 public class SecurityConfig {
 
-    @Bean
-    WebSecurityCustomizer ignoreResources() {
-        return webSecurity -> webSecurity.ignoring().anyRequest();
-    }
+  @Bean
+  WebSecurityCustomizer ignoreResources() {
+    return webSecurity -> webSecurity.ignoring().anyRequest();
+  }
 }

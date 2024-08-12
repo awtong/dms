@@ -8,15 +8,15 @@ import org.springframework.test.context.DynamicPropertyRegistry;
 @TestConfiguration(proxyBeanMethods = false)
 public class KeycloakContainerConfig {
 
-    @Bean
-    KeycloakContainer keycloakContainer(final DynamicPropertyRegistry registry) {
-        final KeycloakContainer keycloakContainer = new KeycloakContainer();
-        keycloakContainer.start();
+  @Bean
+  KeycloakContainer keycloakContainer(final DynamicPropertyRegistry registry) {
+    final KeycloakContainer keycloakContainer = new KeycloakContainer();
+    keycloakContainer.start();
 
-        registry.add("keycloak.server.external-url", keycloakContainer::getAuthServerUrl);
-        registry.add("keycloak.server.internal-url", keycloakContainer::getAuthServerUrl);
-        registry.add("keycloak.dev-portal-realm", () -> "master");
+    registry.add("keycloak.server.external-url", keycloakContainer::getAuthServerUrl);
+    registry.add("keycloak.server.internal-url", keycloakContainer::getAuthServerUrl);
+    registry.add("keycloak.dev-portal-realm", () -> "master");
 
-        return keycloakContainer;
-    }
+    return keycloakContainer;
+  }
 }

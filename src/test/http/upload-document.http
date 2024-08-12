@@ -8,14 +8,14 @@ Content-Disposition: form-data; name="file"; filename="file.txt"
 Test Content
 
 > {%
-    client.test("Correct HTTP status code", function () {
-        client.assert(response.status === 201, "Response status shoule be 201");
-    });
+  client.test("Correct HTTP status code", function () {
+    client.assert(response.status === 201, "Response status shoule be 201");
+  });
 
-    client.test("Location is present", function () {
-        const location = response.headers.valueOf("Location")
-        client.assert(location != null, "Location should not be null");
-    });
+  client.test("Location is present", function () {
+    const location = response.headers.valueOf("Location")
+    client.assert(location != null, "Location should not be null");
+  });
 %}
 
 ###
